@@ -1,0 +1,11 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="20" y="20" width="360" height="260" fill="#e8f5e8" stroke="#388e3c" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2e7d32">FINANCIAL CONSULTING</text>
+  <text x="200" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#424242">African business consultant</text>
+  <text x="200" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#424242">meeting with clients in boardroom</text>
+  <text x="200" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#424242">discussing financial strategy</text>
+  <circle cx="200" cy="220" r="30" fill="#388e3c" opacity="0.2"/>
+  <text x="200" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2e7d32">💼</text>
+</svg>
+

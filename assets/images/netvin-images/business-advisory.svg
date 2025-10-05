@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  
+  <!-- Business meeting setup -->
+  <g transform="translate(50, 60)">
+    <!-- Conference table -->
+    <ellipse cx="150" cy="120" rx="120" ry="60" fill="#1B365D" opacity="0.1"/>
+    <ellipse cx="150" cy="115" rx="115" ry="55" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- Business people around table -->
+    <!-- Person 1 - Advisor -->
+    <g transform="translate(150, 40)">
+      <circle cx="0" cy="0" r="18" fill="#D4AF37"/>
+      <rect x="-12" y="10" width="24" height="30" rx="12" fill="#1B365D"/>
+      <rect x="-8" y="15" width="16" height="8" fill="#D4AF37" opacity="0.3"/>
+    </g>
+    
+    <!-- Person 2 - Client -->
+    <g transform="translate(80, 80)">
+      <circle cx="0" cy="0" r="15" fill="#666"/>
+      <rect x="-10" y="8" width="20" height="25" rx="10" fill="#333"/>
+    </g>
+    
+    <!-- Person 3 - Client -->
+    <g transform="translate(220, 80)">
+      <circle cx="0" cy="0" r="15" fill="#666"/>
+      <rect x="-10" y="8" width="20" height="25" rx="10" fill="#333"/>
+    </g>
+    
+    <!-- Documents on table -->
+    <rect x="100" y="100" width="40" height="30" rx="3" fill="#ffffff" stroke="#D4AF37" stroke-width="2"/>
+    <rect x="160" y="95" width="40" height="30" rx="3" fill="#ffffff" stroke="#1B365D" stroke-width="2"/>
+    
+    <!-- Lines on documents -->
+    <line x1="105" y1="108" x2="135" y2="108" stroke="#666" stroke-width="1"/>
+    <line x1="105" y1="114" x2="130" y2="114" stroke="#666" stroke-width="1"/>
+    <line x1="105" y1="120" x2="135" y2="120" stroke="#666" stroke-width="1"/>
+    
+    <line x1="165" y1="103" x2="195" y2="103" stroke="#666" stroke-width="1"/>
+    <line x1="165" y1="109" x2="190" y2="109" stroke="#666" stroke-width="1"/>
+    <line x1="165" y1="115" x2="195" y2="115" stroke="#666" stroke-width="1"/>
+  </g>
+  
+  <!-- Growth chart on wall -->
+  <g transform="translate(280, 40)">
+    <rect x="0" y="0" width="80" height="60" rx="5" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- Chart title -->
+    <text x="40" y="15" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1B365D">Growth Plan</text>
+    
+    <!-- Growth line -->
+    <polyline points="10,45 25,40 40,30 55,20 70,15" 
+              fill="none" stroke="#D4AF37" stroke-width="3"/>
+    
+    <!-- Data points -->
+    <circle cx="10" cy="45" r="3" fill="#D4AF37"/>
+    <circle cx="25" cy="40" r="3" fill="#D4AF37"/>
+    <circle cx="40" cy="30" r="3" fill="#D4AF37"/>
+    <circle cx="55" cy="20" r="3" fill="#D4AF37"/>
+    <circle cx="70" cy="15" r="3" fill="#D4AF37"/>
+  </g>
+  
+  <!-- Business strategy icons -->
+  <g transform="translate(50, 220)">
+    <!-- Target -->
+    <circle cx="25" cy="25" r="20" fill="#1B365D" opacity="0.1"/>
+    <circle cx="25" cy="25" r="15" fill="#D4AF37" opacity="0.3"/>
+    <circle cx="25" cy="25" r="10" fill="#1B365D" opacity="0.5"/>
+    <circle cx="25" cy="25" r="5" fill="#D4AF37"/>
+    
+    <!-- Lightbulb -->
+    <circle cx="85" cy="20" r="8" fill="#D4AF37"/>
+    <rect x="81" y="28" width="8" height="6" rx="2" fill="#1B365D"/>
+    <line x1="78" y1="12" x2="82" y2="16" stroke="#D4AF37" stroke-width="2"/>
+    <line x1="88" y1="16" x2="92" y2="12" stroke="#D4AF37" stroke-width="2"/>
+    <line x1="85" y1="5" x2="85" y2="9" stroke="#D4AF37" stroke-width="2"/>
+    
+    <!-- Handshake -->
+    <rect x="130" y="20" width="15" height="8" rx="4" fill="#1B365D"/>
+    <rect x="140" y="18" width="15" height="8" rx="4" fill="#D4AF37"/>
+    <circle cx="145" cy="22" r="3" fill="#ffffff"/>
+    
+    <!-- Graph trend -->
+    <rect x="180" y="15" width="30" height="20" rx="3" fill="#ffffff" stroke="#1B365D" stroke-width="2"/>
+    <polyline points="185,30 190,25 195,20 200,18 205,15" 
+              fill="none" stroke="#D4AF37" stroke-width="2"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="370" cy="40" r="25" fill="#D4AF37" opacity="0.1"/>
+  <circle cx="30" cy="40" r="15" fill="#1B365D" opacity="0.2"/>
+  <rect x="320" y="250" width="50" height="50" rx="25" fill="#D4AF37" opacity="0.15"/>
+</svg>

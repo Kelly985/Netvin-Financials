@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B8941F"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Business people silhouettes -->
+  <g transform="translate(50, 200)">
+    <!-- Person 1 -->
+    <ellipse cx="25" cy="50" rx="12" ry="8" fill="#1B365D"/>
+    <rect x="15" y="45" width="20" height="35" rx="10" fill="#1B365D"/>
+    <circle cx="25" cy="25" r="15" fill="#D4AF37"/>
+    
+    <!-- Person 2 -->
+    <ellipse cx="70" cy="50" rx="12" ry="8" fill="#1B365D"/>
+    <rect x="60" y="45" width="20" height="35" rx="10" fill="#1B365D"/>
+    <circle cx="70" cy="25" r="15" fill="#D4AF37"/>
+    
+    <!-- Person 3 -->
+    <ellipse cx="115" cy="50" rx="12" ry="8" fill="#1B365D"/>
+    <rect x="105" y="45" width="20" height="35" rx="10" fill="#1B365D"/>
+    <circle cx="115" cy="25" r="15" fill="#D4AF37"/>
+  </g>
+  
+  <!-- Financial charts and graphs -->
+  <g transform="translate(300, 80)">
+    <!-- Large chart background -->
+    <rect x="0" y="0" width="400" height="250" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- Grid -->
+    <g stroke="#f0f0f0" stroke-width="1">
+      <line x1="50" y1="50" x2="350" y2="50"/>
+      <line x1="50" y1="100" x2="350" y2="100"/>
+      <line x1="50" y1="150" x2="350" y2="150"/>
+      <line x1="50" y1="200" x2="350" y2="200"/>
+      
+      <line x1="50" y1="50" x2="50" y2="200"/>
+      <line x1="125" y1="50" x2="125" y2="200"/>
+      <line x1="200" y1="50" x2="200" y2="200"/>
+      <line x1="275" y1="50" x2="275" y2="200"/>
+      <line x1="350" y1="50" x2="350" y2="200"/>
+    </g>
+    
+    <!-- Growth line -->
+    <polyline points="50,180 125,160 200,120 275,90 350,70" 
+              fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Data points -->
+    <circle cx="50" cy="180" r="6" fill="#D4AF37"/>
+    <circle cx="125" cy="160" r="6" fill="#D4AF37"/>
+    <circle cx="200" cy="120" r="6" fill="#D4AF37"/>
+    <circle cx="275" cy="90" r="6" fill="#D4AF37"/>
+    <circle cx="350" cy="70" r="6" fill="#D4AF37"/>
+    
+    <!-- Bars -->
+    <rect x="75" y="160" width="15" height="40" fill="#1B365D" opacity="0.7"/>
+    <rect x="150" y="120" width="15" height="80" fill="#1B365D" opacity="0.7"/>
+    <rect x="225" y="90" width="15" height="110" fill="#1B365D" opacity="0.7"/>
+    <rect x="300" y="70" width="15" height="130" fill="#1B365D" opacity="0.7"/>
+    
+    <!-- Y-axis labels -->
+    <text x="40" y="55" font-family="Arial" font-size="12" fill="#666">100K</text>
+    <text x="45" y="105" font-family="Arial" font-size="12" fill="#666">75K</text>
+    <text x="45" y="155" font-family="Arial" font-size="12" fill="#666">50K</text>
+    <text x="45" y="205" font-family="Arial" font-size="12" fill="#666">25K</text>
+    
+    <!-- X-axis labels -->
+    <text x="45" y="220" font-family="Arial" font-size="12" fill="#666">Q1</text>
+    <text x="120" y="220" font-family="Arial" font-size="12" fill="#666">Q2</text>
+    <text x="195" y="220" font-family="Arial" font-size="12" fill="#666">Q3</text>
+    <text x="270" y="220" font-family="Arial" font-size="12" fill="#666">Q4</text>
+    <text x="340" y="220" font-family="Arial" font-size="12" fill="#666">Q5</text>
+    
+    <!-- Title -->
+    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1B365D">Financial Growth Analysis</text>
+  </g>
+  
+  <!-- Financial icons -->
+  <g transform="translate(50, 50)">
+    <!-- Dollar sign -->
+    <circle cx="25" cy="25" r="20" fill="#D4AF37"/>
+    <text x="25" y="32" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#ffffff">$</text>
+  </g>
+  
+  <g transform="translate(120, 50)">
+    <!-- Percentage sign -->
+    <circle cx="25" cy="25" r="20" fill="#1B365D"/>
+    <text x="25" y="32" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#ffffff">%</text>
+  </g>
+  
+  <g transform="translate(190, 50)">
+    <!-- Graph icon -->
+    <circle cx="25" cy="25" r="20" fill="#D4AF37"/>
+    <polyline points="15,30 20,25 25,20 30,15 35,10" fill="none" stroke="#ffffff" stroke-width="2"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="750" cy="50" r="30" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="750" cy="350" r="40" fill="#1B365D" opacity="0.2"/>
+  <circle cx="50" cy="350" r="25" fill="#D4AF37" opacity="0.4"/>
+</svg>

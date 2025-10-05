@@ -1,0 +1,43 @@
+# Development files
+*.ps1
+*.bat
+!README.md
+
+# Deployment folders
+netvin-naturals-deploy/
+*.zip
+
+# Documentation (except README)
+COMPLETE-CLEANUP-SUMMARY.md
+CONTACT-PAGE-FINAL-UPDATE.md
+CONTACT-PAGE-IMAGES-UPDATE.md
+FINAL-TESTIMONIALS-WORKPROCESS-UPDATE.md
+FINAL-UPDATES-SUMMARY.md
+LOGO-REPLACEMENT-GUIDE.md
+LOGO-UPDATE-COMPLETE.md
+NAVIGATION-FIXED.md
+NEWSLETTER-AND-CONTACT-UPDATES.md
+NETLIFY-DEPLOYMENT-GUIDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
