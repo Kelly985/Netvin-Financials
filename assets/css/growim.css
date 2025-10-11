@@ -14063,11 +14063,43 @@ body.megamenu-popup-active .mobile-nav__content {
   background-color: RGBA(var(--growim-black-rgb, 23, 1, 44), 0.85);
 }
 .main-banner-two__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 2rem;
+}
+
+/* Left (text) side */
+.main-banner-two__content > h5,
+.main-banner-two__content > p,
+.main-banner-two__btn {
+  flex: 1 1 45%;
+}
+
+/* Right (image/video) side */
+.main-banner-two__name {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Make images scale nicely */
+.main-banner-two__name img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* .main-banner-two__content {
   position: relative;
   z-index: 1;
   display: inline-block;
   text-align: left;
-}
+} */
 @media (max-width: 1499px) {
   .main-banner-two__content {
     padding-left: 20px;
@@ -14081,14 +14113,14 @@ body.megamenu-popup-active .mobile-nav__content {
     padding-right: 10px;
   }
 }
-.main-banner-two__name {
+/* .main-banner-two__name {
   position: relative;
   margin: 0 0 2px;
-}
-.main-banner-two__name img {
+} */
+/* .main-banner-two__name img {
   max-width: 100%;
   text-align: left;
-}
+} */
 .main-banner-two__name__image-one {
   position: absolute;
   left: 32%;
