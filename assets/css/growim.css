@@ -19788,4 +19788,55 @@ body.megamenu-popup-active .mobile-nav__content {
 .work-process-two .container {
   position: relative;
 }
+
+.certifications-section {
+  margin-top: 15px;
+  margin-bottom: 55px; /* Adds blank space below this section */
+}
+
+.certifications-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.certifications-list {
+  list-style: none; /* Removes dots */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 20px; /* spacing between items */
+}
+
+.certifications-list li {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.certifications-list i {
+  color: #28a745; /* Green tick */
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.main-banner-two__title {
+  background: linear-gradient(90deg, #FFD700, #FFCC33, #FFB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.highlight-text {
+  background: linear-gradient(90deg, #FFE066, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  display: block;
+  font-size: 0.9em;
+}
+
+
+
 /*# sourceMappingURL=growim.css.map */
