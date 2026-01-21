@@ -64,6 +64,642 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/growim.css" />
   
+    <!-- Custom Hero Section Styles -->
+    <style>
+        /* Modern Hero Slider Styles */
+        .hero-modern-slider {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            background: #000000;
+        }
+
+        .hero-slide-item {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scale(1.1);
+            transition: transform 8s ease-out;
+            z-index: 1;
+        }
+
+        .hero-slide-item.active .hero-slide-bg {
+            transform: scale(1);
+        }
+
+        .hero-slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(10, 20, 40, 0.75) 100%);
+            z-index: 2;
+        }
+
+        /* 3D Shapes Animation */
+        .hero-3d-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape-3d {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(30, 60, 120, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            animation: float3d 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+            box-shadow: 0 0 100px rgba(212, 175, 55, 0.3);
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 5s;
+            box-shadow: 0 0 80px rgba(30, 60, 120, 0.3);
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
+        }
+
+        @keyframes float3d {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(30px, -30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-20px, 20px) rotate(180deg);
+            }
+            75% {
+                transform: translate(20px, 30px) rotate(270deg);
+            }
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            padding: 80px 0 60px;
+        }
+        
+        @media (min-width: 992px) {
+            .hero-content {
+                padding-top: 120px;
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(30, 60, 120, 0.2) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            margin-bottom: 25px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-badge span {
+            color: #D4AF37;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 65px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: #ffffff;
+            animation: slideInDown 1s ease-out 0.2s both;
+        }
+
+        .hero-title .title-line-1,
+        .hero-title .title-line-2 {
+            display: block;
+        }
+
+        .hero-title .title-line-2 {
+            margin-top: 10px;
+        }
+
+        .hero-title .highlight-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #1E3C72 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInLeft 1s ease-out 0.4s both;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-btn-primary,
+        .hero-btn-secondary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .hero-btn-primary::before,
+        .hero-btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-btn-primary:hover::before,
+        .hero-btn-secondary:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Icons - Hidden since images removed */
+        .floating-elements,
+        .hero-image-wrapper,
+        .hero-3d-card,
+        .hero-main-image {
+            display: none;
+        }
+
+        .hero-3d-card {
+            position: relative;
+            transform-style: preserve-3d;
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .hero-main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            transform: translateZ(50px);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-3d-card:hover .hero-main-image {
+            transform: translateZ(80px) scale(1.05);
+        }
+
+        @keyframes floatCard {
+            0%, 100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotateY(5deg);
+            }
+        }
+
+        /* Floating Icons */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .float-icon {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(30, 60, 120, 0.15) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #D4AF37;
+            animation: floatIcon 8s infinite ease-in-out;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .float-icon-1 {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-icon-2 {
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .float-icon-3 {
+            top: 50%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(90deg) scale(1.1);
+            }
+            50% {
+                transform: translate(-15px, 15px) rotate(180deg) scale(0.9);
+            }
+            75% {
+                transform: translate(15px, 20px) rotate(270deg) scale(1.05);
+            }
+        }
+
+        /* Owl Carousel Customization */
+        .hero-modern-slider .owl-nav {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 1400px;
+            left: 50%;
+            z-index: 20;
+            pointer-events: none;
+            padding: 0 20px;
+        }
+        
+        .hero-modern-slider .owl-nav * {
+            pointer-events: all !important;
+        }
+
+        .hero-modern-slider .owl-nav button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.6) !important;
+            border: 2px solid rgba(212, 175, 55, 0.8) !important;
+            border-radius: 50%;
+            color: #D4AF37 !important;
+            font-size: 20px !important;
+            transition: all 0.3s ease;
+            pointer-events: all !important;
+            cursor: pointer !important;
+            backdrop-filter: blur(10px);
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            opacity: 1 !important;
+            visibility: visible !important;
+            z-index: 15;
+            -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .hero-modern-slider .owl-nav button:active {
+            transform: scale(0.95);
+        }
+
+        .hero-modern-slider .owl-nav button:hover {
+            background: rgba(212, 175, 55, 0.4) !important;
+            border-color: #D4AF37 !important;
+            transform: scale(1.15);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero-modern-slider .owl-nav .owl-prev {
+            left: 0;
+        }
+
+        .hero-modern-slider .owl-nav .owl-next {
+            right: 0;
+        }
+        
+        @media (min-width: 992px) {
+            .hero-modern-slider .owl-nav {
+                padding: 0 40px;
+            }
+            
+            .hero-modern-slider .owl-nav button {
+                width: 70px;
+                height: 70px;
+                font-size: 22px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .hero-modern-slider .owl-nav {
+                padding: 0 60px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-modern-slider .owl-nav button {
+                width: 50px;
+                height: 50px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-modern-slider .owl-nav {
+                padding: 0 15px;
+            }
+            
+            .hero-modern-slider .owl-nav button {
+                width: 45px;
+                height: 45px;
+                font-size: 14px;
+            }
+        }
+
+        .hero-modern-slider .owl-dots {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 12px;
+        }
+
+        .hero-modern-slider .owl-dots button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: 2px solid rgba(212, 175, 55, 0.5) !important;
+            transition: all 0.3s ease;
+        }
+
+        .hero-modern-slider .owl-dots button.active {
+            background: #D4AF37 !important;
+            border-color: #D4AF37 !important;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 50px;
+            }
+            
+            .hero-description {
+                max-width: 450px;
+                padding-right: 15px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .hero-content {
+                padding: 100px 0 60px;
+                margin-top: 0;
+            }
+            
+            .hero-image-wrapper {
+                padding-top: 40px;
+            }
+
+            .hero-image-wrapper {
+                margin-top: 40px;
+            }
+
+            .float-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .shape-1 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .shape-2 {
+                width: 200px;
+                height: 200px;
+            }
+
+            .shape-3 {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-modern-slider {
+                min-height: 90vh;
+            }
+            
+            .hero-slide-item {
+                min-height: 90vh;
+            }
+            
+            .hero-content {
+                padding: 120px 0 40px;
+                margin-top: 0;
+            }
+
+            .hero-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+            
+            .hero-badge {
+                margin-bottom: 15px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .growim-btn {
+                width: 100%;
+            }
+
+            .hero-modern-slider .owl-nav button {
+                width: 45px;
+                height: 45px;
+                font-size: 14px;
+            }
+
+            .hero-modern-slider .owl-nav .owl-prev {
+                left: 10px;
+            }
+
+            .hero-modern-slider .owl-nav .owl-next {
+                right: 10px;
+            }
+            
+            .hero-modern-slider .owl-dots {
+                bottom: 20px;
+            }
+        }
+
+        /* Parallax Effect */
+        .hero-slide-item {
+            will-change: transform;
+        }
+
+        /* Smooth Transitions */
+        .hero-modern-slider .owl-item {
+            transition: opacity 0.8s ease;
+        }
+        
+        .hero-modern-slider .owl-item:not(.active) {
+            opacity: 0;
+        }
+        
+        .hero-modern-slider .owl-item.active {
+            opacity: 1;
+        }
+        
+        /* Ensure no delay between slides */
+        .hero-modern-slider .owl-carousel .owl-stage-outer {
+            overflow: visible;
+            touch-action: pan-y;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .hero-modern-slider .owl-carousel .owl-item {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: opacity;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Smooth fade transitions without gaps */
+        .hero-modern-slider .owl-carousel .owl-stage {
+            display: flex;
+            align-items: center;
+            touch-action: pan-y;
+        }
+        
+        /* Prevent flickering during transitions */
+        .hero-modern-slider .owl-carousel .owl-item.active .hero-slide-item {
+            opacity: 1;
+        }
+        
+        .hero-modern-slider .owl-carousel .owl-item:not(.active) .hero-slide-item {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        /* Ensure touch/swipe works smoothly */
+        .hero-modern-slider .owl-carousel {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+  
     <!-- Site Name Schema for Google -->
     <script type="application/ld+json">
     {
@@ -208,50 +844,215 @@
         </header><!-- /.main-header -->
 
         <!-- main-slider-start -->
-        <section class="main-banner-two">
-            <div class="main-banner-two__bg" style="background-image: url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80);"></div><!-- main-banner-two__bg -->
-            <div class="main-banner-two__shape-one" style="background-image: url(assets/images/shapes/banner-2-shape-1.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-two" style="background-image: url(assets/images/shapes/banner-2-shape-2.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-three" style="background-image: url(assets/images/shapes/banner-2-shape-3.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-four" style="background-image: url(assets/images/shapes/banner-2-shape-4.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-five" style="background-image: url(assets/images/shapes/banner-2-shape-5.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-six" style="background-image: url(assets/images/shapes/banner-2-shape-6.png);"></div><!-- main-banner-two__shape -->
-            <div class="main-banner-two__shape-seven" style="background-image: url(assets/images/shapes/banner-2-shape-1.png);"></div><!-- main-banner-two__shape -->
-            <div class="container-fluid text-center">
-                <div class="main-banner-two__content">
-                    <div class="main-banner-two__name wow fadeInUp" data-wow-delay="100ms">
-                        <div class="main-banner-two__name__image-one">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Financial Data Analytics Dashboard">
+        <section class="hero-modern-slider">
+            <div class="hero-slider-carousel growim-owl__carousel owl-carousel owl-theme" data-owl-options='{
+                "loop": true,
+                "autoplay": true,
+                "autoplayTimeout": 3000,
+                "autoplayHoverPause": false,
+                "autoplaySpeed": 3000,
+                "smartSpeed": 600,
+                "animateOut": "fadeOut",
+                "animateIn": "fadeIn",
+                "items": 1,
+                "nav": true,
+                "navText": ["<span class=\"flaticon-left-arrows\"></span>","<span class=\"flaticon-right-arrows\"></span>"],
+                "dots": true,
+                "margin": 0,
+                "navSpeed": 600,
+                "touchDrag": true,
+                "mouseDrag": true,
+                "pullDrag": true,
+                "freeDrag": false,
+                "dragEndSpeed": 600
+            }'>
+                <!-- Slide 1: Accounting Services -->
+                <div class="hero-slide-item">
+                    <div class="hero-slide-bg" style="background-image: url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-3d-shapes">
+                        <div class="shape-3d shape-1"></div>
+                        <div class="shape-3d shape-2"></div>
+                        <div class="shape-3d shape-3"></div>
+                    </div>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center min-vh-100">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-content wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="hero-badge">
+                                        <span>Professional Services</span>
+                                    </div>
+                                    <h1 class="hero-title">
+                                        <span class="title-line-1">Expert Accounting</span>
+                                        <span class="title-line-2 highlight-text">Services</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Comprehensive accounting solutions designed to keep your financial records accurate, 
+                                        compliant, and strategically aligned with your business goals.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <a href="service-details-accounting.html" class="growim-btn hero-btn-primary">
+                                            <span class="growim-btn__text">Learn More</span>
+                                        </a>
+                                        <a href="contact.html" class="growim-btn growim-btn--white hero-btn-secondary">
+                                            <span class="growim-btn__text">Get Started</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="main-banner-two__name__video">
-                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Professional Business Handshake Deal">
-                            <a href="https://www.youtube.com/watch?v=QwEb78e5a8Y" class="video-popup">
-                                <span class="ripple"></span>
-                                <i class="fa fa-play"></i>
-                            </a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Bookkeeping Services -->
+                <div class="hero-slide-item">
+                    <div class="hero-slide-bg" style="background-image: url(https://plus.unsplash.com/premium_photo-1661943721318-2eb4b48134ec?ixlib=rb-4.1.0&auto=format&fit=crop&w=1920&q=80);"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-3d-shapes">
+                        <div class="shape-3d shape-1"></div>
+                        <div class="shape-3d shape-2"></div>
+                        <div class="shape-3d shape-3"></div>
+                    </div>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center min-vh-100">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-content wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="hero-badge">
+                                        <span>Precision & Accuracy</span>
+                                    </div>
+                                    <h1 class="hero-title">
+                                        <span class="title-line-1">Professional</span>
+                                        <span class="title-line-2 highlight-text">Bookkeeping</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Maintain accurate financial records with our meticulous bookkeeping services. 
+                                        We ensure your books are always up-to-date and audit-ready.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <a href="service-details-bookkeeping.html" class="growim-btn hero-btn-primary">
+                                            <span class="growim-btn__text">Learn More</span>
+                                        </a>
+                                        <a href="contact.html" class="growim-btn growim-btn--white hero-btn-secondary">
+                                            <span class="growim-btn__text">Get Started</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div><!-- slider-name -->
-                    <h5 class="main-banner-two__title wow fadeInUp" data-wow-delay="200ms">
-                        Professional Financial Services<br>
-                        <span class="highlight-text">in Kenya and beyond borders</span>
-                      </h5>
-                      
-                                          <p class="main-banner-two__text wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Transform your business finances with our expert bookkeeping, tax planning, and financial
-                        consulting services. Your trusted partner for financial growth and compliance. -->
-                    </p>
-                    <div class="main-banner-two__btn wow fadeInUp" data-wow-delay="400ms">
-                        <!-- <img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHhwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Financial Growth"> -->
-                        <div class="main-banner-two__btn__clients">
-                            <img src="https://plus.unsplash.com/premium_photo-1663040111191-c585a609fd9c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJsYWNrJTIwYWNjb3VudGFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="Professional Client">
-                            <!-- <img src="https://images.unsplash.com/photo-1494790108755-2616c6b7a0a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80" alt="Business Client"> -->
-                            <img src="https://plus.unsplash.com/premium_photo-1707155465551-0d2b570926d6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBhY2NvdW50YW50fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" alt="Professional Client">
-                            <img src="https://plus.unsplash.com/premium_photo-1723780879636-867cc32bbcfd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJsYWNrJTIwYWNjb3VudGFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="Satisfied Client">
-                            <span>Powering your financial confidence.</span>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Tax Services -->
+                <div class="hero-slide-item">
+                    <div class="hero-slide-bg" style="background-image: url(https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-3d-shapes">
+                        <div class="shape-3d shape-1"></div>
+                        <div class="shape-3d shape-2"></div>
+                        <div class="shape-3d shape-3"></div>
+                    </div>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center min-vh-100">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-content wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="hero-badge">
+                                        <span>Tax Compliance</span>
+                                    </div>
+                                    <h1 class="hero-title">
+                                        <span class="title-line-1">Expert Tax</span>
+                                        <span class="title-line-2 highlight-text">Services</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Navigate complex tax regulations with confidence. Our tax experts ensure compliance, 
+                                        maximize deductions, and minimize your tax burden.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <a href="service-details-tax.html" class="growim-btn hero-btn-primary">
+                                            <span class="growim-btn__text">Learn More</span>
+                                        </a>
+                                        <a href="contact.html" class="growim-btn growim-btn--white hero-btn-secondary">
+                                            <span class="growim-btn__text">Get Started</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a class="growim-btn" href="services.html">
-                            <span class="growim-btn__text">Our Services</span>
-                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Business Advisory -->
+                <div class="hero-slide-item">
+                    <div class="hero-slide-bg" style="background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-3d-shapes">
+                        <div class="shape-3d shape-1"></div>
+                        <div class="shape-3d shape-2"></div>
+                        <div class="shape-3d shape-3"></div>
+                    </div>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center min-vh-100">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-content wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="hero-badge">
+                                        <span>Strategic Growth</span>
+                                    </div>
+                                    <h1 class="hero-title">
+                                        <span class="title-line-1">Business</span>
+                                        <span class="title-line-2 highlight-text">Advisory</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Strategic financial consulting to drive your business forward. Get expert insights 
+                                        and actionable advice to optimize performance and achieve sustainable growth.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <a href="service-details-advisory.html" class="growim-btn hero-btn-primary">
+                                            <span class="growim-btn__text">Learn More</span>
+                                        </a>
+                                        <a href="contact.html" class="growim-btn growim-btn--white hero-btn-secondary">
+                                            <span class="growim-btn__text">Get Started</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Payroll Management -->
+                <div class="hero-slide-item">
+                    <div class="hero-slide-bg" style="background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-3d-shapes">
+                        <div class="shape-3d shape-1"></div>
+                        <div class="shape-3d shape-2"></div>
+                        <div class="shape-3d shape-3"></div>
+                    </div>
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center min-vh-100">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-content wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="hero-badge">
+                                        <span>Efficient Solutions</span>
+                                    </div>
+                                    <h1 class="hero-title">
+                                        <span class="title-line-1">Payroll</span>
+                                        <span class="title-line-2 highlight-text">Management</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Streamline your payroll processes with our comprehensive management solutions. 
+                                        Ensure accurate, timely payments and full compliance with labor regulations.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <a href="service-details-payroll.html" class="growim-btn hero-btn-primary">
+                                            <span class="growim-btn__text">Learn More</span>
+                                        </a>
+                                        <a href="contact.html" class="growim-btn growim-btn--white hero-btn-secondary">
+                                            <span class="growim-btn__text">Get Started</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -348,17 +1149,19 @@
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="100ms">
                         <div class="about-four__content about-four__content--right">
-                            <div class="about-four__image">
+                            <p class="about-four__content__text">
+                                Based in Kenya and trusted around the world, we deliver intelligent, remote accounting solutions that help businesses thrive across borders. 
+                                Our certified professionals combine expertise in multi-currency bookkeeping, strategic financial management, and full regulatory compliance 
+                                to bring you clarity, efficiency, and sustainable growth.
+                              </p>
+                            <div class="about-four__image" style="margin: 30px 0;">
                                 <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Professional Financial Advisory Session">
                                 <div class="about-four__image__border" style="background-image: url(assets/images/shapes/about-4-border.png);"></div>
                             </div>
                             <p class="about-four__content__text">
-                                Based in Kenya and trusted around the world, we deliver intelligent, remote accounting solutions that help businesses thrive across borders. 
-                                Our certified professionals combine expertise in multi-currency bookkeeping, strategic financial management, and full regulatory compliance 
-                                to bring you clarity, efficiency, and sustainable growth. From Africa to Europe and the U.S., we simplify complex financial processes 
+                                From Africa to Europe and the U.S., we simplify complex financial processes 
                                 through secure, cloud-based systems — empowering you to focus on what truly matters: building your business with confidence.
                               </p>
-                              
                             <ul class="about-four__content__list">
                                 <li><i class="flaticon-check-two"></i>Comprehensive financial health assessments.</li>
                                 <li><i class="flaticon-check-two"></i>Advanced financial reporting and analysis.</li>
@@ -1390,6 +2193,126 @@
     <script src="assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
     <!-- template js -->
     <script src="assets/js/growim.js"></script>
+    
+    <!-- Custom Hero Slider Smooth Transitions -->
+    <script>
+        jQuery(document).ready(function($) {
+            // Ensure smooth, continuous carousel transitions
+            var heroCarousel = $('.hero-slider-carousel');
+            var autoplayInterval = null;
+            
+            if (heroCarousel.length) {
+                // Wait for carousel to initialize
+                heroCarousel.on('initialized.owl.carousel', function() {
+                    var carousel = $(this).data('owl.carousel');
+                    if (carousel) {
+                        // Ensure autoplay settings are correct
+                        carousel.settings.autoplay = true;
+                        carousel.settings.autoplayTimeout = 3000;
+                        carousel.settings.smartSpeed = 600;
+                        carousel.settings.autoplayHoverPause = false;
+                        
+                        // Start autoplay immediately
+                        setTimeout(function() {
+                            if (carousel && !carousel.autoplayTimer) {
+                                carousel.play();
+                            }
+                        }, 500);
+                    }
+                });
+                
+                // Restart autoplay after manual navigation
+                heroCarousel.on('changed.owl.carousel', function(event) {
+                    var carousel = $(this).data('owl.carousel');
+                    if (carousel) {
+                        // Clear any existing timeout
+                        if (autoplayInterval) {
+                            clearTimeout(autoplayInterval);
+                        }
+                        // Restart autoplay after 3 seconds
+                        autoplayInterval = setTimeout(function() {
+                            var currentCarousel = heroCarousel.data('owl.carousel');
+                            if (currentCarousel) {
+                                currentCarousel.settings.autoplay = true;
+                                currentCarousel.settings.autoplayTimeout = 3000;
+                                if (!currentCarousel.autoplayTimer) {
+                                    currentCarousel.play();
+                                }
+                            }
+                        }, 3000);
+                    }
+                });
+                
+                // Handle navigation arrow clicks - ensure they work
+                $(document).on('click', '.hero-modern-slider .owl-nav button', function(e) {
+                    var carousel = heroCarousel.data('owl.carousel');
+                    if (carousel) {
+                        // Stop autoplay temporarily
+                        carousel.stop();
+                        // Restart autoplay after 3 seconds
+                        if (autoplayInterval) {
+                            clearTimeout(autoplayInterval);
+                        }
+                        autoplayInterval = setTimeout(function() {
+                            var currentCarousel = heroCarousel.data('owl.carousel');
+                            if (currentCarousel) {
+                                currentCarousel.settings.autoplay = true;
+                                currentCarousel.settings.autoplayTimeout = 3000;
+                                if (!currentCarousel.autoplayTimer) {
+                                    currentCarousel.play();
+                                }
+                            }
+                        }, 3000);
+                    }
+                });
+                
+                // Handle touch/swipe events
+                heroCarousel.on('dragged.owl.carousel', function() {
+                    var carousel = $(this).data('owl.carousel');
+                    if (carousel) {
+                        carousel.stop();
+                        if (autoplayInterval) {
+                            clearTimeout(autoplayInterval);
+                        }
+                        autoplayInterval = setTimeout(function() {
+                            var currentCarousel = heroCarousel.data('owl.carousel');
+                            if (currentCarousel) {
+                                currentCarousel.settings.autoplay = true;
+                                currentCarousel.settings.autoplayTimeout = 3000;
+                                if (!currentCarousel.autoplayTimer) {
+                                    currentCarousel.play();
+                                }
+                            }
+                        }, 3000);
+                    }
+                });
+                
+                // Monitor and ensure autoplay is always running
+                setInterval(function() {
+                    var carousel = heroCarousel.data('owl.carousel');
+                    if (carousel && carousel.settings.autoplay) {
+                        // If autoplay stopped, restart it
+                        if (!carousel.autoplayTimer) {
+                            carousel.play();
+                        }
+                    }
+                }, 2000); // Check every 2 seconds
+                
+                // Force start autoplay after initialization
+                setTimeout(function() {
+                    var carousel = heroCarousel.data('owl.carousel');
+                    if (carousel) {
+                        carousel.settings.autoplay = true;
+                        carousel.settings.autoplayTimeout = 3000;
+                        carousel.settings.autoplayHoverPause = false;
+                        if (!carousel.autoplayTimer) {
+                            carousel.play();
+                        }
+                    }
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 
 </html>
