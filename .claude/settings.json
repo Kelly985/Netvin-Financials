@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Get-ChildItem -Path . -File | Select-Object Name | Sort-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path assets -Directory | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path assets/css -File | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path assets/js -File | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path assets/vendors -Directory | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path assets/images -Directory | Select-Object Name\")",
+      "Read(//c/Users/user/AppData/Local/Temp/claude/screenshots/**)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=80\" -o \"d:/Projects/Netvin Naturals/themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template/growim-html-package/index 4 webpage/assets/images/resources/why-choose-3-1.png\")",
+      "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80\" -OutFile \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\assets\\\\images\\\\resources\\\\about-4-1.jpg\" -UseBasicParsing)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1400&q=80\" -o \"d:/Projects/Netvin Naturals/themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template/growim-html-package/index 4 webpage/assets/images/backgrounds/counter-bg.jpg\" --max-time 30 -s -w \"%{http_code} %{size_download}\")",
+      "Bash(Remove-Item -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\team.html\")",
+      "Bash(Remove-Item -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\team-details.html\")",
+      "Bash(Remove-Item -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\portfolio.html\")",
+      "Bash(Remove-Item -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\portfolio-details.html\")",
+      "Bash(Remove-Item -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\assets\\\\vendors\\\\growim-icons\\\\demo.html\")",
+      "PowerShell(Remove-Item -Recurse -Force \"d:\\\\Projects\\\\Netvin Naturals\\\\themeforest-lFagIb99-growim-creative-digital-marketing-agency-html-template\\\\growim-html-package\\\\index 4 webpage\\\\netvin-naturals-deploy\" -Confirm:$false)"
+    ]
+  }
+}
