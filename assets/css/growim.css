@@ -21646,6 +21646,9 @@ body.megamenu-popup-active .mobile-nav__content {
 .nv-team-mono--ceo {
   background: linear-gradient(145deg, #0a1628 0%, #1B365D 55%, #0D1F3C 100%);
 }
+.nv-team-mono--accountant {
+  background: linear-gradient(145deg, #0a1f3a 0%, #0f2d4a 55%, #1B365D 100%);
+}
 .nv-team-mono--marketing {
   background: linear-gradient(145deg, #0D1F3C 0%, #15304e 55%, #1a3a5c 100%);
 }
@@ -21697,6 +21700,49 @@ body.megamenu-popup-active .mobile-nav__content {
 /* hover lift on the card */
 .team-card-four:hover .nv-team-mono__initials {
   text-shadow: 0 0 60px rgba(212,175,55,0.55);
+}
+
+/* ── CEO featured card — real photo, portrait frame ── */
+.team-card-four--ceo .team-card-four__image {
+  border-radius: 16px;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  overflow: hidden;
+}
+.team-card-four--ceo .team-card-four__image img {
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  border-radius: 16px;
+  transition: transform 500ms ease;
+}
+.team-card-four--ceo:hover .team-card-four__image img {
+  transform: scale(1.04);
+}
+.team-card-four__bio {
+  font-size: 14px;
+  line-height: 1.76;
+  color: #6b7c93;
+  margin: 10px 0 18px;
+  padding: 0 2px;
+}
+/* gold accent rule under CEO designation */
+.team-card-four--ceo .team-card-four__designation {
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+}
+.team-card-four--ceo .team-card-four__designation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #D4AF37;
+  border-radius: 2px;
 }
 
 /* ============================================================
@@ -23325,6 +23371,75 @@ body.megamenu-popup-active .mobile-nav__content {
 .contact-one .form-one__control button[type="submit"]:hover {
   background: #c9a227 !important;
   transform: translateY(-2px) !important;
+}
+
+/* Portfolio carousel — arrow button & category label brand fix */
+.portfolio-four__item__btn a {
+  background-image: none;
+  background-color: #D4AF37;
+  color: #070E1C;
+}
+.portfolio-four__item__btn a:hover {
+  background-color: #0D1F3C;
+  color: #D4AF37;
+}
+.portfolio-four__item__cate {
+  color: #1B365D;
+}
+
+/* FA icons in the service icon circle — match flaticon visual weight */
+.service-four__item__icon .fas {
+  font-size: 32px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Service Cards — Netvin Brand Hover (replaces purple template)
+   Fill: Dark Navy #0D1F3C  |  Accent: Gold #D4AF37
+═══════════════════════════════════════════════════════════ */
+
+/* Replace purple-to-blue gradient fill with Dark Navy */
+.service-four__item::after {
+  background-image: none;
+  background-color: #0D1F3C;
+}
+
+/* Lift card + inset gold top-bar on hover (no overflow/clip risk) */
+.service-four__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 56px rgba(7, 14, 28, 0.20), inset 0 4px 0 #D4AF37;
+}
+
+/* Icon circle: flip to Gold bg + Dark Navy icon on card hover */
+.service-four__item__icon {
+  transition: background-color 400ms ease, color 400ms ease, box-shadow 400ms ease;
+}
+.service-four__item:hover .service-four__item__icon {
+  background-color: #D4AF37;
+  color: #070E1C;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+/* Arrow button: Gold by default (replaces purple gradient) */
+.service-four__item__rm {
+  background-image: none;
+  background-color: #D4AF37;
+  color: #070E1C;
+}
+/* Arrow button fill-on-hover: use gold so the inversion stays on-brand */
+.service-four__item__rm::after {
+  background-color: #D4AF37;
+}
+/* Arrow standalone hover (user hovers button, not whole card) */
+.service-four__item__rm:hover {
+  color: #070E1C;
+  filter: drop-shadow(0px 4px 12px rgba(212, 175, 55, 0.55));
+}
+/* Arrow on hovered card: flip to white bg + dark icon */
+.service-four__item:hover .service-four__item__rm {
+  background-color: #ffffff;
+  background-image: none;
+  color: #0D1F3C;
+  filter: none;
 }
 
 /*# sourceMappingURL=growim.css.map */
