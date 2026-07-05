@@ -22,6 +22,65 @@
     <meta name="twitter:title" content="Bookkeeping Services Kenya | Netvin Financials" />
     <meta name="twitter:description" content="Professional bookkeeping services by Netvin Financials. Accurate financial record-keeping, transaction management and bank reconciliation for Kenyan businesses." />
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://netvinfinancials.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://netvinfinancials.com/services" },
+        { "@type": "ListItem", "position": 3, "name": "Bookkeeping", "item": "https://netvinfinancials.com/service-details-bookkeeping" }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Bookkeeping Services in Nairobi",
+      "description": "Professional bookkeeping in Nairobi by Netvin Financials. We handle records, bank reconciliations & QuickBooks reporting so your books are always audit-ready.",
+      "serviceType": "Bookkeeping",
+      "provider": {
+        "@type": "AccountingService",
+        "name": "Netvin Financials",
+        "url": "https://netvinfinancials.com",
+        "telephone": "+254799377957"
+      },
+      "areaServed": { "@type": "City", "name": "Nairobi" },
+      "url": "https://netvinfinancials.com/service-details-bookkeeping"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should my books be updated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monthly reconciliation is the minimum required for KRA compliance, but we recommend weekly transaction recording for businesses with high volumes. Up-to-date books give you real-time cash flow visibility and make tax season stress-free." }
+        },
+        {
+          "@type": "Question",
+          "name": "What accounting software do you use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We work with QuickBooks Online, Sage, and NetSuite — the leading platforms used by Kenyan SMEs. If you're not yet on software, we help you set up the right platform and manage it on your behalf." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a bookkeeper if I already use accounting software?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Software records transactions — a bookkeeper interprets them. A bookkeeper ensures your data is accurately categorised, reconciled each period, and ready for KRA compliance — which software alone cannot guarantee." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my business needs bookkeeping services?",
+          "acceptedAnswer": { "@type": "Answer", "text": "If you're spending hours on receipts, unsure of your monthly profit, worried about a KRA audit, or scrambling at year-end — you need a bookkeeper. Netvin Financials ensures you always know exactly where your business stands financially." }
+        }
+      ]
+    }
+    </script>
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +105,15 @@
 
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/growim.css" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMF6Q0H8QR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PMF6Q0H8QR');
+    </script>
 </head>
 
 <body class="custom-cursor">
@@ -95,7 +163,7 @@
                     <div class="main-header__inner">
                         <div class="main-header__logo">
                             <a href="index.html">
-                                <img src="assets/images/logos/netvin-logo-light.png" alt="Netvin Financials" style="max-height: 46px; width: auto; max-width: 130px; object-fit: contain;">
+                                <img loading="lazy" decoding="async" src="assets/images/logos/netvin-logo-light.png" alt="Netvin Financials" style="max-height: 46px; width: auto; max-width: 130px; object-fit: contain;">
                             </a>
                         </div><!-- /.main-header__logo -->
                         <nav class="main-header__nav main-menu">
@@ -164,7 +232,7 @@
                 <!-- Intro -->
                 <div class="nv-sd__intro">
                     <div class="nv-sd__intro-image wow fadeInLeft" data-wow-delay="100ms">
-                        <img src="https://plus.unsplash.com/premium_photo-1661643012554-babc1667ae35?auto=format&fit=crop&q=80&w=1332" alt="Professional Bookkeeping Services — Netvin Financials">
+                        <img loading="lazy" decoding="async" src="https://plus.unsplash.com/premium_photo-1661643012554-babc1667ae35?auto=format&fit=crop&q=80&w=1332" alt="Professional Bookkeeping Services — Netvin Financials">
                         <div class="nv-sd__intro-image-overlay"></div>
                     </div>
                     <div class="wow fadeInRight" data-wow-delay="200ms">
@@ -172,6 +240,7 @@
                         <h1 class="nv-sd__title">Accurate Books.<br>Confident Decisions.</h1>
                         <p class="nv-sd__text">Our professional bookkeeping services ensure your business maintains accurate and up-to-date financial records. We handle daily transaction recording, account reconciliation, and financial statement preparation to give you a clear picture of your financial health at all times.</p>
                         <p class="nv-sd__text">With our systematic approach, you'll have organised records that facilitate easy reporting, budgeting, and decision-making — powered by QuickBooks Online, Sage, and NetSuite.</p>
+                        <p class="nv-sd__text">Organised books make <a href="service-details-tax.html">Tax Filing</a> and <a href="service-details-payroll.html">Payroll Management</a> faster, simpler, and fully compliant.</p>
                         <a href="contact.html" class="nv-sd__cta">Book Free Consultation <span>→</span></a>
                     </div>
                 </div>
@@ -230,6 +299,32 @@
                     </div>
                 </div>
 
+                <!-- FAQ Section -->
+                <div class="nv-sd__faq wow fadeInUp" data-wow-delay="0ms">
+                    <div class="nv-sd__faq-head">
+                        <span class="nv-sd__features-tag">Common Questions</span>
+                        <h2 class="nv-sd__features-title">Bookkeeping FAQ</h2>
+                    </div>
+                    <div class="nv-sd__faq-list">
+                        <details class="nv-sd__faq-item">
+                            <summary class="nv-sd__faq-q">How often should my books be updated?</summary>
+                            <p class="nv-sd__faq-a">Monthly reconciliation is the minimum required for KRA compliance, but we recommend weekly transaction recording for businesses with high volumes. Up-to-date books give you real-time visibility on cash flow and make tax season entirely stress-free.</p>
+                        </details>
+                        <details class="nv-sd__faq-item">
+                            <summary class="nv-sd__faq-q">What accounting software do you use?</summary>
+                            <p class="nv-sd__faq-a">We work with QuickBooks Online, Sage, and NetSuite — the leading platforms used by Kenyan SMEs. If you're not yet on software, we help you set up the right platform for your business size and transaction volume, then manage it on your behalf.</p>
+                        </details>
+                        <details class="nv-sd__faq-item">
+                            <summary class="nv-sd__faq-q">Do I need a bookkeeper if I already use accounting software?</summary>
+                            <p class="nv-sd__faq-a">Software records transactions — a bookkeeper interprets them. Software won't catch miscategorised expenses, flag unusual variances, or prepare you for a KRA audit. A bookkeeper ensures your data is accurate, categorised correctly, and reconciled each period so your financials actually mean something.</p>
+                        </details>
+                        <details class="nv-sd__faq-item">
+                            <summary class="nv-sd__faq-q">How do I know if my business needs bookkeeping services?</summary>
+                            <p class="nv-sd__faq-a">If you're spending hours on receipts, unsure of your monthly profit, worried about a KRA audit, or scrambling at year-end — you need a bookkeeper. Netvin Financials takes the entire process off your hands so you always know exactly where your business stands financially.</p>
+                        </details>
+                    </div>
+                </div>
+
                 <!-- Other Services -->
                 <div class="nv-sd__others wow fadeInUp" data-wow-delay="100ms">
                     <div class="nv-sd__others-head">
@@ -268,7 +363,7 @@
             <div class="nv-footer__brand">
                 <div class="container">
                     <a href="index.html" class="nv-footer__logo">
-                        <img src="assets/images/logos/netvin-logo-light.png" alt="Netvin Financials" style="max-height: 48px; width: auto; object-fit: contain;">
+                        <img loading="lazy" decoding="async" src="assets/images/logos/netvin-logo-light.png" alt="Netvin Financials" style="max-height: 48px; width: auto; object-fit: contain;">
                     </a>
                     <p class="nv-footer__tagline">Kenya's trusted partner for accounting,<br>tax compliance &amp; financial growth.</p>
                     <div class="nv-footer__ctas">
@@ -344,7 +439,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logos/netvin-logo-light.png" width="205" style="max-height: 85px; object-fit: contain;" alt="Netvin Financials" /></a>
+                <a href="index.html" aria-label="logo image"><img loading="lazy" decoding="async" src="assets/images/logos/netvin-logo-light.png" width="205" style="max-height: 85px; object-fit: contain;" alt="Netvin Financials" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

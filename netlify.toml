@@ -3,3 +3,9 @@
 
 [build.processing.html]
   pretty_urls = true
+
+[[redirects]]
+  from   = "https://www.netvinfinancials.com/*"
+  to     = "https://netvinfinancials.com/:splat"
+  status = 301
+  force  = true

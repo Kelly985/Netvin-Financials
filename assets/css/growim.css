@@ -23442,4 +23442,33 @@ body.megamenu-popup-active .mobile-nav__content {
   filter: none;
 }
 
+/* FAQ accordion — service detail pages */
+.nv-sd__faq { padding: 60px 0 20px; }
+.nv-sd__faq-head { text-align: center; margin-bottom: 40px; }
+.nv-sd__faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.nv-sd__faq-item {
+  border: 1px solid rgba(13,31,60,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.25s;
+}
+.nv-sd__faq-item[open] { box-shadow: 0 6px 24px rgba(7,14,28,0.10); border-color: #1B365D; }
+.nv-sd__faq-q {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #070E1C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.nv-sd__faq-q::-webkit-details-marker { display: none; }
+.nv-sd__faq-q::after { content: "+"; font-size: 20px; color: #D4AF37; flex-shrink: 0; transition: transform 0.25s; }
+.nv-sd__faq-item[open] .nv-sd__faq-q::after { transform: rotate(45deg); }
+.nv-sd__faq-a { padding: 0 24px 18px; color: #444; line-height: 1.7; font-size: 15px; margin: 0; }
+
 /*# sourceMappingURL=growim.css.map */
