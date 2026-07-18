@@ -9,3 +9,127 @@
   to     = "https://netvinfinancials.com/:splat"
   status = 301
   force  = true
+
+# Template ghost pages → homepage / nearest equivalent
+[[redirects]]
+  from = "/blog-grid"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog-list-right"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog-details-right"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to   = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio-details"
+  to   = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/team"
+  to   = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/team-details"
+  to   = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to   = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/cart"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/index-4"
+  to   = "/"
+  status = 301
+
+# .html extension duplicates → pretty URLs
+[[redirects]]
+  from = "/index.html"
+  to   = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to   = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/services.html"
+  to   = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to   = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/service-details-bookkeeping.html"
+  to   = "/service-details-bookkeeping"
+  status = 301
+
+[[redirects]]
+  from = "/service-details-tax.html"
+  to   = "/service-details-tax"
+  status = 301
+
+[[redirects]]
+  from = "/service-details-payroll.html"
+  to   = "/service-details-payroll"
+  status = 301
+
+[[redirects]]
+  from = "/service-details-accounting.html"
+  to   = "/service-details-accounting"
+  status = 301
+
+[[redirects]]
+  from = "/service-details-advisory.html"
+  to   = "/service-details-advisory"
+  status = 301
+
+[[redirects]]
+  from = "/service-details.html"
+  to   = "/service-details"
+  status = 301
+
+# Old growim asset paths → new netvin asset paths
+[[redirects]]
+  from = "/assets/css/growim.css"
+  to   = "/assets/css/netvin.css"
+  status = 301
+
+[[redirects]]
+  from = "/assets/js/growim.js"
+  to   = "/assets/js/netvin.js"
+  status = 301
+
+[[redirects]]
+  from = "/assets/vendors/growim-icons/*"
+  to   = "/assets/vendors/netvin-icons/:splat"
+  status = 301
+
+# Noindex header for GSC verification file
+[[headers]]
+  for = "/google2d7a2e9740d2a174.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

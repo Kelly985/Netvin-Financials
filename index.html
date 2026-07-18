@@ -13,6 +13,12 @@
     <link rel="preload" as="image" href="assets/images/backgrounds/hero-1-bookkeeping.jpg" />
     <meta name="description" content="Netvin Financials offers comprehensive financial services in Kenya including professional bookkeeping, tax preparation, financial consulting, accounting, and payroll management. Your trusted partner for business financial success." />
     <link rel="canonical" href="https://netvinfinancials.com/" />
+    <link rel="alternate" hreflang="en-KE" href="https://netvinfinancials.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://netvinfinancials.com/" />
+    <meta name="geo.region" content="KE-110" />
+    <meta name="geo.placename" content="Nairobi, Kenya" />
+    <meta name="geo.position" content="-1.2921;36.8219" />
+    <meta name="ICBM" content="-1.2921, 36.8219" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Netvin Financials" />
     <meta property="og:url" content="https://netvinfinancials.com/" />
@@ -39,19 +45,19 @@
     <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
     <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
     <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.css" />
-    <link rel="stylesheet" href="assets/vendors/growim-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/netvin-icons/style.css" />
     <link rel="stylesheet" href="assets/vendors/slick/slick.css">
     <link rel="stylesheet" href="assets/vendors/jquery-flipster-master/jquery.flipster.min.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/growim.css" />
+    <link rel="stylesheet" href="assets/css/netvin.css" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AccountingService",
+      "@type": ["AccountingService", "LocalBusiness"],
       "name": "Netvin Financials",
       "url": "https://netvinfinancials.com",
       "logo": "https://netvinfinancials.com/assets/images/logos/netvin-logo-light.png",
@@ -61,9 +67,15 @@
         "@type": "PostalAddress",
         "streetAddress": "Kamiti Road, Shell Petrol Station, Maziwa, First Floor",
         "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
         "addressCountry": "KE"
       },
-      "areaServed": "Nairobi, Kenya",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -1.2921,
+        "longitude": 36.8219
+      },
+      "areaServed": { "@type": "Country", "name": "Kenya" },
       "priceRange": "KSh",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -1247,7 +1259,7 @@
     <script src="assets/vendors/jquery-circleType/jquery.circleType.js"></script>
     <script src="assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
     <!-- template js -->
-    <script src="assets/js/growim.js"></script>
+    <script src="assets/js/netvin.js"></script>
 
     <!-- Hero Slider -->
     <script>

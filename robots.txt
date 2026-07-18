@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+Disallow: /blog-grid
+Disallow: /blog-list-right
+Disallow: /blog-details-right
+Disallow: /portfolio
+Disallow: /portfolio-details
+Disallow: /team
+Disallow: /team-details
+Disallow: /faq
+Disallow: /cart
+Disallow: /index-4
+
 Sitemap: https://netvinfinancials.com/sitemap.xml
