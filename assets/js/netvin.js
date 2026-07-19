@@ -588,16 +588,18 @@
       });
     }
   }
-  /*-- Flipster Carousel --*/
-  $("#portfolio-four__carousel").flipster({
-    style: 'carousel',
-    spacing: -0.4,
-    buttons: true,
-    loop: true,
-    keyboard: false,
-    scrollwheel: false,
-    nav: false,
-  });
+  /*-- Flipster Carousel (guarded — library may not be loaded) --*/
+  if ($.fn.flipster && $("#portfolio-four__carousel").length) {
+    $("#portfolio-four__carousel").flipster({
+      style: 'carousel',
+      spacing: -0.4,
+      buttons: true,
+      loop: true,
+      keyboard: false,
+      scrollwheel: false,
+      nav: false,
+    });
+  }
 
   /*-- Handle Scrollbar --*/
   function handleScrollbar() {
